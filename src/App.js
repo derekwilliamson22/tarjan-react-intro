@@ -18,6 +18,18 @@ class App extends Component {
     //Clickalus Cage Day
   }
 
+  onFeelingChange = (event) => {
+    this.setState({
+      feeling: event.target.value
+    });
+  }
+
+  onDayChange = (event) => {
+    this.setState({
+      whatDayIsIt: event.target.value
+    });
+  }
+
   clickalicious = () => {
     this.setState({
       feeling: 'Clickalus',
@@ -32,6 +44,8 @@ class App extends Component {
       <div>
         <h1>{this.state.feeling} {this.state.whatDayIsIt}!</h1>
 
+        <input type='text' placeholder='Feeling' onChange={this.onFeelingChange} />
+        <input type='text' placeholder='What Day Is It' onChange={this.onDayChange} />
         <button onClick={this.clickalicious}>Clickalicious</button>
 
         <h3>Things to learn about React:</h3>

@@ -12,11 +12,27 @@ import ThingsToLearn from './ThingsToLearn'
 // React Component Incantation
 class App extends Component {
 
+  state = {
+    whatDayIsIt: 'Taco Day',
+    feeling: 'Happy',
+    //Clickalus Cage Day
+  }
+
+  clickalicious = () => {
+    this.setState({
+      feeling: 'Clickalus',
+      whatDayIsIt: 'Cage Day'
+    }); // end setState
+  } // end clickalicious
 
   render() {
+    
+    
     return (
       <div>
-        <h1>Happy React Day!</h1>
+        <h1>{this.state.feeling} {this.state.whatDayIsIt}!</h1>
+
+        <button onClick={this.clickalicious}>Clickalicious</button>
 
         <h3>Things to learn about React:</h3>
         <ThingsToLearn />
@@ -29,7 +45,6 @@ class App extends Component {
       </div>
     );
   }
-
 
 
 }
